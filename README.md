@@ -59,7 +59,7 @@ The `info.yml` file allows some optional properties:
     ```
 3. Check the web ui you should be able to find _Robots_
 
-![admin menu](https://github.com/steveworley/robots-d8/raw/master/img/solarized-palette.png)
+![admin menu](https://github.com/steveworley/robots-d8/blob/module-init/admin-modules.png)
 
 ## More info
 https://www.drupal.org/node/2000204
