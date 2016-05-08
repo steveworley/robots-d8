@@ -1,0 +1,22 @@
+# Metadata about the module.
+name: 'Robots'
+description: 'Manage a list of robots'
+
+# Package allows Module grouping in admin/modules.
+package: Robots
+
+# Module configuration page, must point to a defined route.
+configure: robots.settings
+
+# Type tells Drupal what type of extension this is: can be module, theme, profile.
+type: module
+
+# Tells Drupal which version the module is compatible with.
+core: 8.x
+
+
+#
+# If the module requires dependencies.
+# dependencies:
+#   - {project}:{machine_name}
+#
