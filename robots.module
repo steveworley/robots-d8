@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+use Drupal\robots\Entity\Robot;
+
+function robots_node_load($nodes) {
+  $robots = Robot::loadMultiple();
+  foreach ($nodes as $node) {
+    $node->robots = $robots;
+  }
+
+  kint($robots);
+}
