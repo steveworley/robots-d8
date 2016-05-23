@@ -1,0 +1,15 @@
+add robot entities:
+  title: 'Create new Robot entities'
+
+administer robot entities:
+  title: 'Administer Robot entities'
+  description: 'Allow to access the administration form to configure Robot entities.'
+
+delete robot entities:
+  title: 'Delete Robot entities'
+
+edit robot entities:
+  title: 'Edit Robot entities'
+
+view robot entities:
+  title: 'View Robot entities'

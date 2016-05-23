@@ -1,0 +1,22 @@
+# Robot routing definition
+robot.settings_tab:
+  route_name: robot.settings
+  title: 'Settings'
+  base_route: robot.settings
+
+entity.robot.canonical:
+  route_name: entity.robot.canonical
+  base_route: entity.robot.canonical
+  title: 'View'
+
+entity.robot.edit_form:
+  route_name: entity.robot.edit_form
+  base_route: entity.robot.canonical
+  title: Edit
+
+entity.robot.delete_form:
+  route_name:  entity.robot.delete_form
+  base_route:  entity.robot.canonical
+  title: Delete
+  weight: 10
+

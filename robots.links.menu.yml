@@ -1,0 +1,12 @@
+# Robot menu items definition
+entity.robot.collection:
+  title: 'Robot list'
+  route_name: entity.robot.collection
+  description: 'List Robot entities'
+
+robot.admin.structure.settings:
+  title: Robot settings
+  description: 'Configure Robot entities'
+  route_name: robot.settings
+  parent: system.admin_structure
+

@@ -1,0 +1,62 @@
+
+# Robot routing definition
+entity.robot.canonical:
+  path: '/admin/robot/{robot}'
+  defaults:
+    _entity_view: 'robot'
+    _title: 'Robot'
+  requirements:
+    _entity_access: 'robot.view'
+  options:
+    _admin_route: TRUE
+
+entity.robot.collection:
+  path: '/admin/robot'
+  defaults:
+    _entity_list: 'robot'
+    _title: 'Robot list'
+  requirements:
+    _permission: 'view robot entities'
+  options:
+    _admin_route: TRUE
+
+entity.robot.add_form:
+  path: '/admin/robot/add'
+  defaults:
+    _entity_form: robot.add
+    _title: 'Add Robot'
+  requirements:
+    _permission: 'add robot entities'
+  options:
+    _admin_route: TRUE
+
+entity.robot.edit_form:
+  path: '/admin/robot/{robot}/edit'
+  defaults:
+    _entity_form: robot.edit
+    _title: 'Edit Robot'
+  requirements:
+    _permission: 'edit robot entities'
+  options:
+    _admin_route: TRUE
+
+entity.robot.delete_form:
+  path: '/admin/robot/{robot}/delete'
+  defaults:
+    _entity_form: robot.delete
+    _title: 'Delete Robot'
+  requirements:
+    _permission: 'delete robot entities'
+  options:
+    _admin_route: TRUE
+
+robot.settings:
+  path: 'admin/structure/robot'
+  defaults:
+   _form: '\Drupal\robots\Entity\Form\RobotSettingsForm'
+   _title: 'Robot settings'
+  requirements:
+    _permission: 'administer robot entities'
+  options:
+    _admin_route: TRUE
+

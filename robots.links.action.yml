@@ -1,0 +1,7 @@
+entity.robot.add_form:
+  route_name: entity.robot.add_form
+  title: 'Add Robot'
+  appears_on:
+    - entity.robot.collection
+    - entity.robot.canonical
+
