@@ -1,27 +1,6 @@
 # Robots Step 2
 
-The entity API provides a structured approach to data management within Drupal.
-
-### Config vs Content
-
-Drupal 8 provides two types of entities; a configuration entity and a content entity.
-
-#### Config
-
-Configuration entities allow the user to create many configurations of something
-
-**Examples**
-
-- Content Types
-
-#### Content
-
-- What is a content entity
-- Where to use a content entity
-
-**Examples**
-
- - Node
+The next lesson is how to create custom entity types for your module.
 
 ### Defining entities
 
@@ -131,7 +110,7 @@ If additional fields can be added via the GUI to this entity type.
 
 ##### Base Field Definitions
 
-The Entity classes `baseFieldDefinitions`
+The Entity classes `baseFieldDefinitions` method is used to determine what fields the entitiy will have and what the table schema for the entity will be.
 
 
 #### Step 1. Create the entity class file
@@ -142,3 +121,61 @@ robots
 |   └── *Entity
 |       └── *Robot.php
 ```
+
+And add the [class definition](https://github.com/steveworley/robots-d8/blob/custom-entities/src/Entity/Robot.php).
+
+#### Step 2. Create necessary class files to match those defined in the entities annotations.
+```
+robots
+├── src
+|   └── Entity
+|       └── *Form
+|           └── *RobotDeleteForm.php
+|           └── *RobotForm.php
+|           └── *RobotSettingsForm.php
+|       └── Robot.php
+|       └── *RobotViewsData.php
+|   └── *RobotAccessControlHandler.php
+|   └── *RobotInterface.php
+|   └── *RobotListBuilder.php
+```
+Review any definitions on Github and update the classes.
+
+- RobotDeleteForm: This is the form that is presented to the user when they attempt to delete an entity
+- RobotForm: This is the form that is presented when creating or editing an entity
+- RobotSettingsForm: When the content entity is fieldable this is the form that will be presented to users to configure fields
+- RobotoViewsData.php: Defines how views can interact with the entity
+- RobotAccessControlHandler.php: Defines how permissions are checked for this entity
+- RobotInterface.php: An interface to the entity class, when additional fields are defined their getters and setters should be defined here.
+- RobotListBuilder.php: Determines which fields should be shown when building a list of Robots.
+
+#### Step 3. Add configuration YML files
+```
+robots
+├── *robots.links.action.yml
+├── *robots.links.menu.yml
+├── *robotos.links.task.yml
+├── *robots.permissions.yml
+└── *robots.routing.yml
+```
+
+Review the definitions on Github and update the configuration files.
+
+- robotos.links.action.yml: Defines roboto action links and where they appear
+- robotos.links.menu.yml: Defines robot menu links
+- robotos.links.task.yml: Defines configuration for specific tasks
+- robotos.permissions.yml: Create new permissions which will be added to the admin/people/permissions page
+- robots.routing.yml: Define routes that are used to access the Robot entity.
+
+#### Step 4. Add templates
+```
+robots
+├── *templates
+|    └── robot.html.twig
+└── *robot.page.inc
+```
+
+Review the definitions on Github and update the template files.
+
+- robot.html.twig: Contains the default template information
+- robot.page.inc: Prepares the robot entity for rendering via Twig.
