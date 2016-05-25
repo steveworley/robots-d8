@@ -30,6 +30,7 @@ function robots_node_load($nodes) {
     $node->robots = $robots;
   }
 }
+```
 
 To define your own hook you can include the following snippet:
 
